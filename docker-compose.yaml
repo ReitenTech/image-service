@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  image-uploader:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: r2-image-uploader
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3001}:${PORT:-3001}"
+    env_file:
+      - .env
