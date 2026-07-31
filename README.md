@@ -43,13 +43,13 @@ npm install
 
 2. **Создайте файл `.env` в корне проекта и заполните его:**
 ```env
-PORT=3001
-CORS_ORIGIN=http://localhost:3000
-R2_ENDPOINT=https://<ACCOUNT_ID>.r2.cloudflarestorage.com
-R2_ACCESS_KEY_ID=your_access_key
-R2_SECRET_ACCESS_KEY=your_secret_key
+R2_ACCESS_KEY=your_access_key
+R2_SECRET_KEY=your_secret_key
+R2_ACCOUNT_ID=your_id
 R2_BUCKET_NAME=your_bucket_name
 
+CORS_ORIGIN=http://localhost:3000
+PORT=3001
 ```
 
 
