@@ -77,9 +77,38 @@ docker compose up --build
 
 ```bash
 docker compose down
+```
+
+---
+
+## 📦 Запуск готового образа из Docker Hub
+
+Проект уже собран и опубликован в Docker Hub. Вы можете запустить его без локальной сборки.
+
+**Вариант 1: Через Docker Compose (Рекомендуемый)**
+Добавьте этот сервис в ваш `docker-compose.yml`:
+```yaml
+services:
+  image-service:
+    image: mykytadiadiunov2311/image-service:latest
+    ports:
+      - "3001:3001"
+    env_file: .env
+    networks:
+      - app-network
 
 ```
 
+**Вариант 2: Через команду docker run**
+Если нужно быстро поднять только этот контейнер в терминале:
+
+```bash
+# Скачиваем образ
+docker pull mykytadiadiunov2311/image-service:latest
+
+# Запускаем контейнер (не забудьте создать файл .env)
+docker run -d -p 3001:3001 --env-file .env mykytadiadiunov2311/image-service:latest
+```
 ---
 
 ## 📌 API Endpoints
